@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import fetchPhotos from './Data';
+import fetchPhotos from './Data'; 
 
 const Card = () => {
   const [photos, setPhotos] = useState([]);
@@ -13,12 +13,13 @@ const Card = () => {
     fetchPhotosData();
   }, []);
 
+
   const sortedPhotos = photos.sort((a, b) => a.position - b.position);
 
   return (
-    <div className="py-8">
+    <div className="py-8"> 
       <div className="flex justify-center items-center h-screen">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
+        <div className="max-w-2xl mx-auto">
           {sortedPhotos.map((photo) => (
             <div
               key={photo.id}
@@ -31,7 +32,7 @@ const Card = () => {
               />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{photo.title}</h3>
-              
+               
               </div>
             </div>
           ))}
